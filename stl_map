@@ -1,0 +1,41 @@
+#include <iostream>
+#include<map>
+#include<unordered_map>
+using namespace std;
+
+int main()
+{/*
+unordered_map - constant time complexity
+map (ordered) - logn time 
+*/
+   unordered_map<string,int> m;
+   m["one"] = 1;
+   m["two"] = 2;
+   m["three"] = 3;
+   
+   pair<string,int> p= make_pair("nonu", 20);
+   m.insert(p);
+   
+   pair<string,int> pair2("kalra" , 50);
+   m.insert(pair2);
+   
+   cout<<m["one"]<<endl;
+   cout<<m["two"]<<endl;
+   cout<<m["three"]<<endl;
+   cout<<m["nonu"]<<endl;
+   cout<<m["kalra"]<<endl;
+   //only used to check ,not initialized
+   cout<<m.at("nonu")<<endl;
+   cout<<m["nonu2"]<<endl;
+   cout<<m.size()<<endl;
+   cout<<m.count("nonu2")<<endl;
+   m.erase("one");
+   cout<<m.size()<<endl;
+   //iterator
+   unordered_map<string,int> :: iterator no = m.begin();
+   while(no != m.end()){
+      cout<<no->first<<" "<<no->second<<endl;
+      no++;
+   }
+    return 0;
+}
