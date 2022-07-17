@@ -34,6 +34,5 @@ marks1.at(2) = 50;
    for(int i: marks1){
       cout<<i<<" ";
    }
-   
    return 0;
 }
